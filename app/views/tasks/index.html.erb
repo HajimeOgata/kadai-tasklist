@@ -5,6 +5,8 @@
 <% @tasks.each do |tasks| %>
 
     <li>
+<%= link_to tasks.id, tasks %>
+    :  
 <%= tasks.content %>
 </li>
   
