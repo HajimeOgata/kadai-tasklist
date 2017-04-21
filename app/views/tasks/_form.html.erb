@@ -5,12 +5,8 @@
     <div id="error_explanation">
       <ul>
         
-<% tasks.errors.full_tasks.each do |tasks| %>
-
-          <li>
-<%= tasks %>
-</li>
-        
+<% tasks.errors.full_messages.each do |message| %>
+ <li><%= message %></li>
 <% end %>
 
       </ul>
