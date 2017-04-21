@@ -1,19 +1,39 @@
 <h1>タスク一覧</h1>
+<% if @tasks.any? %>
 
-<ul>
-  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>ステータス</th>
+        <th>タスク</th>
+      </tr>
+    </thead>
+    <tbody>
+      
 <% @tasks.each do |tasks| %>
 
-    <li>
+        <tr>
+          <td>
 <%= link_to tasks.id, tasks %>
-    :  
-<%= tasks.content %>
- >
+</td>
+          <td>
 <%= tasks.status %>
-</li>
-  
+</td>
+          <td>
+<%= tasks.content %>
+</td>
+        </tr>
+      
 <% end %>
 
-</ul>
+    </tbody>
+  </table>
+  <div>
+    
+<%= paginate @tasks %>
 
-<%= link_to '新規タスクの投稿', new_task_path %>
+  </div>
+<% end %>
+
+<%= link_to '新規タスクの投稿', new_task_path , class: "btn btn-primary" %>
