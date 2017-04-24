@@ -1,3 +1,15 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: message-board_development
+
 production:
   adapter: postgresql
   encoding: unicode
